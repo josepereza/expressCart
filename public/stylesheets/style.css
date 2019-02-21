@@ -5,3 +5,8 @@
 .thumbnail .description{
     color: cadetblue;
 }
+
+.price{
+    font-weight: bold;
+    font-size: 16px;
+}
