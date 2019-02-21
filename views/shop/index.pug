@@ -2,28 +2,19 @@ extends ../layout
 
 block content
   each val in products
-    this in val
+    
     .row
     .col-sm-6.col-md-4
       .thumbnail
-        img(src=val[0].imagePath, alt='...' class='image-resonsive')
+        img(src=this.imagePath, alt='...' class='image-resonsive')
         .caption
-          h3=val[0].title
-          p=val[0].description 
+          h3=this.title
+          p=this.description 
           .clearfix
             .price
-              p=val[0].price
+              p=this.price
                 a.btn.btn-primary.pull-right(href='#', role='button') Button  
-    .col-sm-6.col-md-4
-      .thumbnail
-        img(src=val[2].imagePath, alt='...' class='image-resonsive')
-        .caption
-          h3=val[2].title
-          p=val[2].description 
-          .clearfix
-            .price
-              p=val[2].price
-                a.btn.btn-primary.pull-right(href='#', role='button') Button  
+    
   
 
        
