@@ -4,17 +4,29 @@ block content
   each val in products
     this in val
     .row
-      .col-sm-6.col-md-4
-        .thumbnail
-          img(src='https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png', alt='...' class='image-resonsive')
-          .caption
-            h3 Thumbnail label
-            p(class='description  ') Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dignissimos quos optio quibusdam. Nisi quisquam, culpa eos distinctio odit inventore architecto molestiae enim, est voluptatem magni saepe nostrum beatae labore.
-            .clearfix
-              .price $12
-                  a.btn.btn-primary.pull-right(href='#', role='button') Button  
+    .col-sm-6.col-md-4
+      .thumbnail
+        img(src=val[0].imagePath, alt='...' class='image-resonsive')
+        .caption
+          h3=val[0].title
+          p=val[0].description 
+          .clearfix
+            .price
+              p=val[0].price
+                a.btn.btn-primary.pull-right(href='#', role='button') Button  
+    .col-sm-6.col-md-4
+      .thumbnail
+        img(src=val[2].imagePath, alt='...' class='image-resonsive')
+        .caption
+          h3=val[2].title
+          p=val[2].description 
+          .clearfix
+            .price
+              p=val[2].price
+                a.btn.btn-primary.pull-right(href='#', role='button') Button  
   
 
+       
        
 
 
