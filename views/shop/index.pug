@@ -2,25 +2,10 @@ extends ../layout
 
 block content
   each val in products
-<<<<<<< HEAD
-    
-=======
->>>>>>> 1998f7afccb49ea3660fd7b45ea1469159390265
     .row
     - for (var i = 0; i < val.length; ++i) {
     .col-sm-6.col-md-4
       .thumbnail
-<<<<<<< HEAD
-        img(src=this.imagePath, alt='...' class='image-resonsive')
-        .caption
-          h3=this.title
-          p=this.description 
-          .clearfix
-            .price
-              p=this.price
-                a.btn.btn-primary.pull-right(href='#', role='button') Button  
-    
-=======
         img(src=val[i].imagePath, alt='...' class='image-resonsive')
         .caption
           h3=val[i].title
@@ -30,7 +15,6 @@ block content
               p=val[i].price
                 a.btn.btn-primary.pull-right(href='#', role='button') Button  
     - }
->>>>>>> 1998f7afccb49ea3660fd7b45ea1469159390265
   
 
        
