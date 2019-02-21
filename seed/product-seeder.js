@@ -22,6 +22,48 @@ var products = [
         title: "New Bike On Sale!",
         description: "8 Gear Bike, very nice",
         price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "Old Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "Ok Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "Ugly Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "New Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "Old Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "Ok Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
+    }),
+    new Product({
+        imagePath: 'https://images.giant-bicycles.com/b_white,c_pad,h_400,q_80/dlptzraok4vi9di1wdb1/MY19-Escape-3_Color-A.jpg',
+        title: "Ugly Bike On Sale!",
+        description: "8 Gear Bike, very nice",
+        price: 500
     })
 ];
 
