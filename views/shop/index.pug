@@ -6,14 +6,14 @@ block content
     - for (var i = 0; i < val.length; ++i) {
     .col-sm-6.col-md-4
       .thumbnail
-        img(src=val[i].imagePath, alt='...' class='image-resonsive')
+        img(src=val[i].imagePath, alt='...' class='image-resonsive')  
         .caption
           h3=val[i].title
           p=val[i].description 
           .clearfix
             .price
               p="$"+val[i].price
-                a.btn.btn-primary.pull-right(href='#', role='button') Add to Cart  
+                a.btn.btn-primary.pull-right(href='/add-to-cart/'+val[i]._id, role='button') Add to Cart  
     - }
   
 
