@@ -11,8 +11,8 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/logout',  isLoggedIn, function(req, res, next) {
-  res.logout();
-  res.render('/'); 
+  req.logout();
+  res.redirect('/'); 
 });
 
 router.use('/', notLoggedIn, function(req, res, next){
