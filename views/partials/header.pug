@@ -17,7 +17,7 @@
         <li>
           <a href="/shopping-cart/">
             <i class="fas fa-shopping-cart"></i> My Cart
-            //- <span class="badge">#{session.cart.totalQty}</span>
+            <span class="badge">#{session.cart ? session.cart.totalQty : "0"}</span>
           </a>
         </li>
         <li class="dropdown">

@@ -13,7 +13,9 @@ block content
           .clearfix
             .price
               p="$"+val[i].price
-                a.btn.btn-primary.pull-right(href='/add-to-cart/'+val[i]._id, role='button') Add to Cart  
+                a.btn.btn-primary.pull-right(href='/add-to-cart/'+val[i]._id, role='button') Add to Cart
+                //- a.btn.btn-primary.pull-right(href='/add-to-cart/', role='button') Add to Cart #{this._id}
+
     - }
   
 
