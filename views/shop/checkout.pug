@@ -4,10 +4,8 @@ block content
     form#payment-form(action='/checkout', method='post')
         .form-row
             label(for='card-element') Credit or debit card
-        #card-element
-            // a Stripe Element will be inserted here.
-            // Used to display form errors
-        #card-errors(role='alert')
-    input.submit(type='submit', value='Submit Payment')
-
-    script(type='text/javascript', src='javascripts/checkout.js')
+            #card-element
+            #card-errors(role='alert')
+    button Submit Payment
+    
+    link(rel='stylesheet', href='/stylesheets/stripe.css')

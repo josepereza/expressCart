@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 var validator = require("express-validator");
 var MongoStore = require("connect-mongo")(session);
 
+const stripe = require("stripe")('pk_test_ztUXQzALnwWMFPm4lR1yhauj');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
