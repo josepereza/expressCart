@@ -1,11 +1,12 @@
 extends ../layout
 
 block content
-    form#payment-form(action='/checkout', method='post')
+    form#payment-form(action='/charge', method='post')
         .form-row
             label(for='card-element') Credit or debit card
-            #card-element
-            #card-errors(role='alert')
+        #card-element
+        #card-errors(role='alert')
     button Submit Payment
-    
+
+    script(type='text/javascript', src='javascripts/checkout.js')
     link(rel='stylesheet', href='/stylesheets/stripe.css')
