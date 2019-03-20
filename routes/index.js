@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
 var Product = require('../models/product');
+var Order = require('../models/order');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -67,8 +68,11 @@ router.post('/checkout', function (req, res, next){
     // asynchronously called
     if (err){
       req.flash('error', err.message);
-      return res.redirect('/checkout');
+      return res.redirect('/checkout', {errMsg: err.message});
     }
+    var order = new Order({
+      user: req.user
+    });
     req.flash('success', "Successfully purchased! ");
     req.session.cart = null;
     res.redirect('/');
