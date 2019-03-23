@@ -24,6 +24,7 @@ module.exports = function Cart(oldCart){
         if (this.items[id].qty <= 0){
             delete this.items[id]; 
         }
+        
     };
 
     this.removeItem = function (id){
