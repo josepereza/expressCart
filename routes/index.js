@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
     for (var i=0; i<docs.length; i+=chunkSize) {
       productChunks.push(docs.slice(i, i+chunkSize));
     }
-    res.render('shop/index', { title: 'ExpressCart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
+    res.render('shop/index', { title: 'ExpressCart', products: productChunks, successMsg: successMsg});
   });
  
 });
@@ -41,17 +41,17 @@ router.get('/shopping-cart', function(req, res, next) {
   res.render("shop/shopping-cart", {products: cart.generateArray(), totalPrice: cart.totalPrice});
 });
 
-router.get('/checkout', function(req, res, next){
+router.get('/checkout', isLoggedIn, function(req, res, next){
   if (!req.session.cart){
     return res.redirect("shop/shopping-cart");
   }
   var cart = new Cart(req.session.cart);
   var errMsg = req.flash('error')[0];
-  res.render("shop/checkout", {total: cart.totalPrice, errMsg: errMsg, noErrors: !errMsg});
+  res.render("shop/checkout", {total: cart.totalPrice, errMsg: errMsg});
 
 });
 
-router.post('/checkout', function (req, res, next){
+router.post('/checkout', isLoggedIn, function (req, res, next){
   if (!req.session.cart){
     return res.redirect("shop/shopping-cart");
   }
@@ -71,13 +71,28 @@ router.post('/checkout', function (req, res, next){
       return res.redirect('/checkout', {errMsg: err.message});
     }
     var order = new Order({
-      user: req.user
+      user: req.user,
+      cart: cart,
+      address: req.body.address,
+      name: req.body.name,
+      paymentId: charge.id
     });
-    req.flash('success', "Successfully purchased! ");
-    req.session.cart = null;
-    res.redirect('/');
+    order.save(function(err, result) {
+      req.flash('success', "Successfully Purchased! ");
+      req.session.cart = null;
+      res.redirect('/');
+    });
+    
   });
 });
 module.exports = router;
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  req.session.oldUrl = req.url;
+  res.redirect("/user/signin");
+}
 
 // this is a test

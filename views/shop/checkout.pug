@@ -4,13 +4,9 @@ block content
         .col-sm-6.col-md-4.col-md-offset-4.col-sm-offset-3
             h1 Checkout
             h4 Your Total: $#{total}
-            #charge-error.alert.alert-danger.hidden
-                - if (!noErrors){
-                    var element = document.getElementById("charge-error");
-                    element.classList.remove("hidden")
-                - }
-                errMsg
-            
+            - if (errMsg){
+                #charge-error.alert.alert-danger=errMsg  
+            - }
             form#checkout-form(action='/checkout', method='post')
                 .row
                     .col-xs-12

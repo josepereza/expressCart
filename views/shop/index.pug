@@ -3,12 +3,10 @@ extends ../layout
 block content
   .row
     .col-sm-6.col-md-4.col-md-offset-4.col-sm-offset-3
-      #success.alert.alert-success.hidden
-      //- - if (!noErrors){
-      //-     p #{errMsg}
-      //- - }
-        successMsg
-
+      - if (successMsg){
+        #success.alert.alert-success=successMsg  
+      - }
+      
   each val in products
     .row
     - for (var i = 0; i < val.length; ++i) {
