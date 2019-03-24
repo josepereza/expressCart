@@ -33,7 +33,7 @@ var products = [
     new Product({
         imagePath: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWXsD7Mlzoiq1IJcFlOyMicS4aJKOaH7UaGQ1lsOoM_BmoTTu',
         title: "New Bike On Sale!",
-        description: "The best bang for your buck and the most popular t-shirt in the world. Fits well and is perfect for any event, whether it be a giveaway, team, or group event.",
+        description: "The best bang for your buck and the most.",
         price: 50
     }),
     new Product({

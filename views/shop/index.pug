@@ -5,6 +5,7 @@ block content
     .col-sm-6.col-md-4.col-md-offset-4.col-sm-offset-3
       - if (successMsg){
         #success.alert.alert-success=successMsg  
+        script(src="javascripts/msg.js")
       - }
       
   each val in products
