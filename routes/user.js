@@ -18,7 +18,7 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
       cart = new Cart(order.cart);
       order.items = cart.generateArray();
     });
-    res.render("user/profile", {orders: orders});
+    res.render("user/profile", { title: 'User Profile', orders: orders});
   }); 
 });
 
@@ -32,7 +32,7 @@ router.use('/', notLoggedIn, function(req, res, next){
 });
 router.get('/signup', function(req, res, next) {
     var messages = req.flash("error");
-    res.render('user/signup', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0}); 
+    res.render('user/signup', {title: 'Sign Up', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0}); 
   });
   
 router.post('/signup', passport.authenticate('local.signup', {
@@ -50,7 +50,7 @@ router.post('/signup', passport.authenticate('local.signup', {
 
 router.get('/signin', function(req, res, next) {
   var messages = req.flash("error");
-  res.render('user/signin', {csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0}); 
+  res.render('user/signin', {title: 'Sign In', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0}); 
 });
 
 router.post('/signin', passport.authenticate('local.signin', {
