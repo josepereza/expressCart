@@ -10,5 +10,5 @@ Para comenzar:
 npm install
 npm start
 
-[Alt text](ExpressCart.png)
-[Alt text](CheckOut.png)
+[Alt text] (ExpressCart.png)
+[Alt text] (Checkout.png)
